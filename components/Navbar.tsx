@@ -1,11 +1,15 @@
 "use client";
+import { useState } from "react";
 
-import logo from "@/public/skooldio-logo.png";
 import Image from "next/image";
-import hamburger from "@/public/hamburger.svg";
-import { createContext, useState } from "react";
+
+import logo from "@/public/doctorq-logo2.png";
 import { SideBar, SideBarItem } from "./SideBar";
-import { BiHome } from "react-icons/bi";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiTwotoneFund } from "react-icons/ai";
+import { FaPhone } from "react-icons/fa6";
+import { IoIosPricetag } from "react-icons/io";
+import { MdHome } from "react-icons/md";
 
 const Navbar = () => {
   const [isTabOpen, setIsTabOpen] = useState(false);
@@ -29,20 +33,24 @@ const Navbar = () => {
             className="md:hidden mr-2 w-10 h-10"
             onClick={() => handleMenuClick()}
           >
-            <Image src={hamburger} alt="menu-icon" />
+            <GiHamburgerMenu className="text-3xl" />
           </button>
-          {isTabOpen && (
-            <SideBar isTabOpen={isTabOpen} setIsTabOpen={setIsTabOpen}>
-              <SideBarItem icon={<BiHome />} text="Home" path="/" />
-              <SideBarItem icon={<BiHome />} text="Program" path="/program" />
-              <SideBarItem
-                icon={<BiHome />}
-                text="Promotion"
-                path="/promotion"
-              />
-              <SideBarItem icon={<BiHome />} text="Contact" path="/contact" />
-            </SideBar>
-          )}
+
+          <SideBar isTabOpen={isTabOpen} setIsTabOpen={setIsTabOpen}>
+            <SideBarItem icon={<MdHome />} text="Home" path="/" />
+            <SideBarItem
+              icon={<AiTwotoneFund />}
+              text="Program"
+              path="/program"
+            />
+            <SideBarItem
+              icon={<IoIosPricetag />}
+              text="Promotion"
+              path="/promotion"
+            />
+            <SideBarItem icon={<FaPhone />} text="Contact" path="/contact" />
+          </SideBar>
+
           <div className="hidden md:flex gap-8 text-base">
             <span>
               <a href="/">Home</a>

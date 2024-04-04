@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useContext, createContext } from "react";
 import Image from "next/image";
-import logo from "@/public/skooldio-logo.png";
-import { LuChevronLast } from "react-icons/lu";
+import logo from "@/public/doctorq-logo2.png";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 type SideBarProps = {
   children: ReactNode;
@@ -22,17 +22,17 @@ export const SideBar = ({
 }: SideBarProps) => {
   return (
     <aside
-      className={`h-screen absolute top-0 right-0 bottom-0 ${
-        isTabOpen ? "w-64" : "w-0"
+      className={`h-screen absolute top-0 right-0 bottom-0 overflow-x-hidden duration-200 ease-in-out transition-all ${
+        isTabOpen ? "w-full" : "w-0"
       }`}
     >
-      <nav className="h-full flex flex-col bg-primary border-l shadow-sm">
-        <div className="p-4 pb-2 flex justify-between items-center">
+      <nav className="h-full flex flex-col bg-primary shadow-sm">
+        <div className="p-4 pt-6 pb-6 flex justify-between items-center">
           <button
             className="p-1.5 rounded-lg"
             onClick={() => setIsTabOpen(false)}
           >
-            <LuChevronLast className="text-3xl" />
+            <GiHamburgerMenu className="text-3xl" />
           </button>
           <Image
             src={logo}
@@ -53,8 +53,8 @@ export const SideBarItem = ({ icon, text, path }: SideBarItemProps) => {
   return (
     <a href={path}>
       <li
-        className={`relative flex items-center py-2 px-3 my-1
-    font-medium rounded-md cursor-pointer
+        className={`relative flex items-center py-6 px-3 my-1
+    font-bold text-2xl rounded-md cursor-pointer
     transition-colors`}
       >
         {icon}
