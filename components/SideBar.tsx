@@ -1,7 +1,9 @@
-import React, { ReactNode, useState, useContext, createContext } from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import logo from "@/public/doctorq-logo2.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SideBarProps = {
   children: ReactNode;
@@ -13,6 +15,7 @@ type SideBarItemProps = {
   icon: any;
   text: string;
   path: string;
+  setIsTabOpen: (active: boolean) => void;
 };
 
 export const SideBar = ({
@@ -35,6 +38,7 @@ export const SideBar = ({
             <GiHamburgerMenu className="text-3xl" />
           </button>
           <Image
+            priority
             src={logo}
             alt="logo"
             className={`overflow-hidden transition-all ${
@@ -49,17 +53,29 @@ export const SideBar = ({
   );
 };
 
-export const SideBarItem = ({ icon, text, path }: SideBarItemProps) => {
+export const SideBarItem = ({
+  icon,
+  text,
+  path,
+  setIsTabOpen,
+}: SideBarItemProps) => {
+  const pathname = usePathname();
+
   return (
-    <a href={path}>
+    <Link href={path} onClick={() => setIsTabOpen(false)}>
       <li
         className={`relative flex items-center py-6 px-3 my-1
-    font-bold text-2xl rounded-md cursor-pointer
-    transition-colors`}
+    font-semibold text-2xl rounded-md cursor-pointer
+    transition-colors
+    `}
       >
         {icon}
-        <span className="ml-3">{text}</span>
+        <span
+          className={`ml-3 ${path === pathname ? "text-secondary" : undefined}`}
+        >
+          {text}
+        </span>
       </li>
-    </a>
+    </Link>
   );
 };

@@ -6,65 +6,67 @@ import Image from "next/image";
 import logo from "@/public/doctorq-logo2.png";
 import { SideBar, SideBarItem } from "./SideBar";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiTwotoneFund } from "react-icons/ai";
-import { FaPhone } from "react-icons/fa6";
-import { IoIosPricetag } from "react-icons/io";
-import { MdHome } from "react-icons/md";
+import { links } from "@/lib/data";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isTabOpen, setIsTabOpen] = useState(false);
+  const [activePage, setActivePage] = useState("");
 
-  const handleMenuClick = () => {
+  const toggleSidebar = () => {
     setIsTabOpen(!isTabOpen);
   };
 
   return (
     <>
-      <nav className="z-10 w-full bg-primary relative">
+      <nav className="sticky z-10 w-full bg-primary">
         <div className="md:mx-16 flex text-white items-center justify-between p-6">
           <a href="/">
             <Image
               src={logo}
               alt="Logo"
               className="w-full h-12 object-contain"
+              priority
             />
           </a>
           <button
             className="md:hidden mr-2 w-10 h-10"
-            onClick={() => handleMenuClick()}
+            onClick={() => toggleSidebar()}
           >
             <GiHamburgerMenu className="text-3xl" />
           </button>
 
           <SideBar isTabOpen={isTabOpen} setIsTabOpen={setIsTabOpen}>
-            <SideBarItem icon={<MdHome />} text="Home" path="/" />
-            <SideBarItem
-              icon={<AiTwotoneFund />}
-              text="Program"
-              path="/program"
-            />
-            <SideBarItem
-              icon={<IoIosPricetag />}
-              text="Promotion"
-              path="/promotion"
-            />
-            <SideBarItem icon={<FaPhone />} text="Contact" path="/contact" />
+            {links.map((link) => (
+              <SideBarItem
+                key={link.path}
+                icon={link.icon}
+                path={link.path}
+                text={link.name}
+                setIsTabOpen={setIsTabOpen}
+              />
+            ))}
           </SideBar>
 
-          <div className="hidden md:flex gap-8 text-base">
-            <span>
-              <a href="/">Home</a>
-            </span>
-            <span>
-              <a href="/program">Program</a>
-            </span>
-            <span>
-              <a href="/promotion">Promotion</a>
-            </span>
-            <span>
-              <a href="/contact">Contact</a>
-            </span>
-          </div>
+          <ul className="hidden md:flex gap-8 text-base">
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link
+                  href={link.path}
+                  className={`${
+                    link.path === pathname ? "text-secondary" : undefined
+                  }`}
+                  onClick={() => {
+                    setActivePage(link.name);
+                  }}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
     </>
