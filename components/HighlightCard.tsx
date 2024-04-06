@@ -1,27 +1,35 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import Link from "next/link";
 
-export const HighlightCard = ({ imageURL }: any) => {
+type HighlightCardProps = {
+  title: string;
+  description: string;
+  imageURL: StaticImageData;
+  id: number;
+};
+export const HighlightCard = ({ ...card }: HighlightCardProps) => {
   return (
-    <div className="bg-primary flex flex-col gap-4 w-full">
-      <AspectRatio ratio={16 / 9}>
+    <div className="bg-primary flex flex-col gap-4 w-full rounded-2xl shadow-black shadow-sm">
+      <AspectRatio ratio={4 / 3}>
         <Image
-          src={imageURL}
+          loading="lazy"
+          src={card.imageURL}
           alt="image"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-t-2xl"
         />
       </AspectRatio>
-      <div className="flex flex-col gap-2 text-white mx-4 my-2">
-        <h5>HIFU เทคโนโลยียกกระชับผิว</h5>
-        <p>
-          Doublo S Hifu เทคโนโลยียกกระชับผิว Hifu เทคโนโลยียกกระชับผิว
-          ที่มีประสิทธิภาพสูง พร้อมทั้งช่วยป้องกันความหย่อนคล้อยของผิวหนัง
-          บริเวณใบหน้า ลำคอ ใต้คาง
-        </p>
-        <button className="border border-secondary my-2 text-white px-4 py-2">
-          <a href="#">More Detail</a>
-        </button>
+      <div className="mt-4 flex flex-col gap-2 text-white mx-4 my-2">
+        <h6 className="text-semibold line-clamp-2 ">{card.title}</h6>
+        <p className="line-clamp-2 text-bodytext">{card.description}</p>
+        <Link
+          href={`blogs/${card.id}`}
+          className="bg-secondary text-primary rounded-2xl mx-auto my-4 px-4 py-2
+          hover:bg-secondary/80 active:bg-secondary/90 hover:scale-105 active:scale-100 transition-all"
+        >
+          More Detail
+        </Link>
       </div>
     </div>
   );
