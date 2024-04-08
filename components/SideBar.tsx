@@ -42,7 +42,7 @@ export const SideBar = ({
             src={logo}
             alt="logo"
             className={`overflow-hidden transition-all ${
-              isTabOpen ? "w-28" : "w-0"
+              isTabOpen ? "w-24" : "w-0"
             }`}
           />
         </div>
@@ -64,12 +64,12 @@ export const SideBarItem = ({
   return (
     <Link href={path} onClick={() => setIsTabOpen(false)}>
       <li
-        className={`relative flex items-center py-6 px-3 my-1
-    font-semibold text-2xl rounded-md cursor-pointer
+        className={`relative flex items-center justify-start py-6 px-3 my-1
+    font-semibold text-lg rounded-md cursor-pointer
     transition-colors
     `}
       >
-        {icon}
+        <span>{icon}</span>
         <span
           className={`ml-3 ${path === pathname ? "text-secondary" : undefined}`}
         >

@@ -1,4 +1,4 @@
-import { HighlightCard } from "@/components/HighlightCard";
+import { Card } from "@/components/Card";
 import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { hilightCardsData } from "@/lib/data";
@@ -25,7 +25,7 @@ export default function Blogs() {
         <div className="grid grid-cols-1 grid-rows-4 gap-10 mx-4">
           {hilightCardsData.map((card, index) => (
             <React.Fragment key={index}>
-              <HighlightCard
+              <Card
                 title={card.title}
                 description={card.description}
                 imageURL={highlight1}

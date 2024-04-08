@@ -1,5 +1,9 @@
+import { BlogContainer } from "@/components/BlogContainer";
 import { SectionDivider } from "@/components/SectionDivider";
+import { SectionHeading } from "@/components/SectionHeading";
 import { hilightCardsData } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type paramsProps = {
@@ -20,9 +24,22 @@ const getBlog = (slug: number) => {
 export default async function Blog({ params }: paramsProps) {
   const blog = await getBlog(params.slug);
   return (
-    <SectionDivider>
-      Blog Name : {blog.title}
-      Blog Description: {blog.description}
-    </SectionDivider>
+    <>
+      <p className="text-primary text-xl">
+        <Link href={"/"}>Home</Link>
+        <span>&gt; </span>
+        <Link href={"/blogs"}>Blogs</Link>
+        <span>&gt; </span>
+        {params.slug}
+      </p>
+      <BlogContainer>
+        <h5 className="bg-primary text-secondary px-4 py-2 mb-4">
+          {blog.title}
+        </h5>
+        <div className="flex flex-col bg-primary/5 px-4">
+          <p>{blog.description}</p>
+        </div>
+      </BlogContainer>
+    </>
   );
 }

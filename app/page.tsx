@@ -1,11 +1,14 @@
 import Hero from "@/components/Hero";
-import { Highlight } from "@/components/Highlight";
+import { HighlightSection } from "@/components/HighlightSection";
+
+import PromotionSection from "@/components/PromotionSection";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Highlight />
+      <PromotionSection />
+      <HighlightSection />
     </>
   );
 }

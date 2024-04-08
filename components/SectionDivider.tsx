@@ -4,5 +4,5 @@ type SectionDividerProps = {
   children: ReactNode;
 };
 export const SectionDivider = ({ children }: SectionDividerProps) => {
-  return <section className="mx-4 mb-24">{children}</section>;
+  return <section className="mx-4 mb-24 mt-24">{children}</section>;
 };

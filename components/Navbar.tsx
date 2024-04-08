@@ -21,13 +21,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky z-10 w-full bg-primary">
+      <nav className="sticky top-0 z-10 w-full bg-primary">
         <div className="md:mx-16 flex text-white items-center justify-between p-6">
           <a href="/">
             <Image
               src={logo}
               alt="Logo"
-              className="w-full h-12 object-contain"
+              className="w-full h-10 object-contain"
               priority
             />
           </a>
