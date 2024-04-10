@@ -7,6 +7,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -18,9 +19,11 @@ const config = {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-      },
+      // fontFamily: {
+      //   "inter": ['var(--font-inter)'],
+      //   "roboto": ['var(--font-roboto_mono)'],
+      //   "anuphan": ['var(--font-anuphan)']
+      // },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -28,10 +31,16 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#222222",
+          700: "#626262",
+          500: "#9F9F9F",
+          300: "#E1E1E1",
+          100: "#F5F5F5",
+          50: "#FAFAFA",
+          DEFAULT: "#212121",
         },
         secondary: {
-          DEFAULT: "#f7ca18",
+          600: "#A8782B",
+          DEFAULT: "#EAB53C",
         },
         bodytext: {
           DEFAULT: "#f2f1ef",
