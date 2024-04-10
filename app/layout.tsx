@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { anuphan } from "@/lib/font";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Doctor Q Clinic | คลินิกปรับสภาพฮอร์โมน",
@@ -22,10 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body
         className={cn(
           "min-h-screen bg-primary/10 font-sans antialiased",
-          fontSans.variable
+          anuphan.className
         )}
       >
         <Navbar />
