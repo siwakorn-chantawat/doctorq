@@ -32,7 +32,7 @@ const Navbar = () => {
             />
           </a>
           <button
-            className="md:hidden mr-2 w-10 h-10"
+            className="md:hidden w-10 h-10"
             onClick={() => toggleSidebar()}
           >
             <GiHamburgerMenu className="text-3xl" />

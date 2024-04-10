@@ -31,12 +31,6 @@ export const SideBar = ({
     >
       <nav className="h-full flex flex-col bg-primary shadow-sm">
         <div className="p-4 pt-6 pb-6 flex justify-between items-center">
-          <button
-            className="p-1.5 rounded-lg"
-            onClick={() => setIsTabOpen(false)}
-          >
-            <GiHamburgerMenu className="text-3xl" />
-          </button>
           <Image
             priority
             src={logo}
@@ -45,6 +39,12 @@ export const SideBar = ({
               isTabOpen ? "w-24" : "w-0"
             }`}
           />
+          <button
+            className="p-1.5 rounded-lg"
+            onClick={() => setIsTabOpen(false)}
+          >
+            <GiHamburgerMenu className="text-3xl" />
+          </button>
         </div>
 
         <ul className="flex-1 px-3">{children}</ul>
