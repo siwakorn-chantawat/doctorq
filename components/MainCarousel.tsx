@@ -17,10 +17,10 @@ import Link from "next/link";
 
 export default function MainCarousel() {
   return (
-    <Carousel opts={{ align: "center" }} className="w-full">
+    <Carousel opts={{ align: "end" }} className="w-full">
       <CarouselContent>
         {hilightCardsData.map((card) => (
-          <CarouselItem key={card.id} className="md:basis-1/3">
+          <CarouselItem key={card.id} className="md:basis-1/2 lg:basis-1/4">
             <NewBlogCard {...card} imageURL={highlight1} />
           </CarouselItem>
         ))}
@@ -29,14 +29,6 @@ export default function MainCarousel() {
       <CarouselNext className="hidden md:block" />
       <div className="mt-4 flex flex-col gap-4 items-center justify-center">
         <CarouselDots />
-
-        <Link
-          href="/blogs"
-          className="flex items-center text-primary gap-2 text-xl font-semibold"
-        >
-          <span> ดูทั้งหมด</span>
-          <ChevronsRightIcon />
-        </Link>
       </div>
     </Carousel>
   );
