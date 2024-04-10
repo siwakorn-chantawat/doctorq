@@ -1,6 +1,6 @@
 import hero from "@/public/hero.png";
 import Image from "next/image";
-import { AspectRatio } from "./ui/aspect-ratio";
+
 import frontclinic from "@/public/frontclinic.jpeg";
 
 function Hero() {

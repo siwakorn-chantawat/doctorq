@@ -1,24 +1,14 @@
 import React from "react";
 import { SectionHeading } from "./SectionHeading";
-
-import highlight1 from "@/public/oldman1.jpg";
-import { Card } from "./Card";
 import { SectionDivider } from "./SectionDivider";
-import { hilightCardsData } from "@/lib/data";
 
-export const HighlightSection = () => {
-  return (
-    <SectionDivider>
-      <SectionHeading>Blog</SectionHeading>
-      <div className="m-2">
-        <div className="grid grid-cols-1 grid-rows-4 gap-10">
-          {hilightCardsData.map((card, index) => (
-            <React.Fragment key={index}>
-              <Card {...card} imageURL={highlight1} />
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
-    </SectionDivider>
-  );
-};
+import MainCarousel from "./MainCarousel";
+
+export const HighlightSection = () => (
+  <SectionDivider>
+    <SectionHeading> ข้อมูลสุขภาพ </SectionHeading>
+    <div className="my-2 mx-2 md:mx-24">
+      <MainCarousel />
+    </div>
+  </SectionDivider>
+);

@@ -11,8 +11,8 @@ import { SectionHeading } from "./SectionHeading";
 export default function PromotionSection() {
   return (
     <>
-      <div className="flex flex-col gap-8 justify-center mb-32 h-full mx-4">
-        <SectionHeading>Promotion</SectionHeading>
+      <SectionHeading> แพ็คเกจและโปรโมชั่น</SectionHeading>
+      <div className="flex flex-col gap-8 justify-center h-full mx-4 md:flex-row">
         <div className="group flex gap-4 mb-4">
           <div className="group-hover:bg-secondary transition-all shadow-md bg-primary w-12 min-h-full"></div>
           <Image
@@ -21,7 +21,7 @@ export default function PromotionSection() {
             className="w-auto h-full overflow-hidden object-contain rounded-lg shadow-xl"
           />
         </div>
-        <div className="group flex flex-row-reverse gap-4 mb-4">
+        <div className="group flex gap-4 mb-4">
           <div className="group-hover:bg-secondary transition-all shadow-md bg-primary w-12 min-h-full"></div>
           <Image
             src={second}

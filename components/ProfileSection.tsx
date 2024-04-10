@@ -4,7 +4,7 @@ import { SectionDivider } from "./SectionDivider";
 export default function ProfileSection() {
   return (
     <SectionDivider>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 md:flex-row">
         <p className="bg-primary text-white px-4 py-2 text-xl font-medium text-wrap">
           มีประสบการณ์รักษาด้วยฮอร์โมนเพศชายทดแทน
           <span className="text-secondary"> ”มากกว่า 5 ปี”</span>
