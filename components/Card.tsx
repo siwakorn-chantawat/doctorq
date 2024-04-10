@@ -1,6 +1,5 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
 
 type CardProps = {
@@ -9,7 +8,7 @@ type CardProps = {
   imageURL: StaticImageData;
   id: number;
 };
-export const Card = ({ ...card }: CardProps) => {
+export const BlogCard = ({ ...card }: CardProps) => {
   return (
     <div
       className="bg-primary flex flex-col gap-4 w-full shadow-sm
