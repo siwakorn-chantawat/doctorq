@@ -1,41 +1,42 @@
 import React from "react";
 import { AspectRatio } from "./ui/aspect-ratio";
-import second from "@/public/doctor q fb post-3.png";
+import first from "@/public/doctor q fb post-3.png";
+import second from "@/public/doctor q fb post-1_new.jpg";
+import third from "@/public/doctor q fb post-2_new.jpg";
 import Image from "next/image";
 
 import { BsDashLg } from "react-icons/bs";
+import { SectionHeading } from "./SectionHeading";
 
 export default function PromotionSection() {
   return (
     <>
-      <div className="relative mb-24 bg-gradient-to-b from-primary to-primary/85 h-full">
-        <h2
-          className="absolute left-8 right-8 top-5 flex gap-8 items-center justify-center
-           text-white font-bold text-3xl px-2 py-2 rounded-2xl"
-        >
-          <BsDashLg /> Promotion <BsDashLg />
-        </h2>
-        <AspectRatio ratio={1 / 1} className="mx-4">
+      <div className="flex flex-col gap-8 justify-center mb-32 h-full mx-4">
+        <SectionHeading>Promotion</SectionHeading>
+        <div className="group flex gap-4 mb-4">
+          <div className="group-hover:bg-secondary transition-all shadow-md bg-primary w-12 min-h-full"></div>
+          <Image
+            src={first}
+            alt="test"
+            className="w-auto h-full overflow-hidden object-contain rounded-lg shadow-xl"
+          />
+        </div>
+        <div className="group flex flex-row-reverse gap-4 mb-4">
+          <div className="group-hover:bg-secondary transition-all shadow-md bg-primary w-12 min-h-full"></div>
           <Image
             src={second}
             alt="test"
-            className="w-full object-cover absolute bottom-0 left-0 right-0 top-20"
+            className="w-auto h-full overflow-hidden object-contain rounded-lg"
           />
-        </AspectRatio>
-        <AspectRatio ratio={1 / 1} className="mx-4">
+        </div>
+        <div className="group flex gap-4 mb-4">
+          <div className="group-hover:bg-secondary transition-all shadow-md bg-primary w-12 min-h-full"></div>
           <Image
-            src={second}
+            src={third}
             alt="test"
-            className="w-full object-cover absolute bottom-0 left-0 right-0 top-20"
+            className="w-auto h-full overflow-hidden object-contain rounded-lg"
           />
-        </AspectRatio>
-        <AspectRatio ratio={1 / 1} className="mx-4">
-          <Image
-            src={second}
-            alt="test"
-            className="w-full object-cover absolute bottom-0 left-0 right-0 top-20"
-          />
-        </AspectRatio>
+        </div>
       </div>
     </>
   );
