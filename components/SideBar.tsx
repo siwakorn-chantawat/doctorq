@@ -1,9 +1,10 @@
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import logo from "@/public/doctorq-logo2.png";
-import { GiHamburgerMenu } from "react-icons/gi";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IoClose } from "react-icons/io5";
 
 type SideBarProps = {
   children: ReactNode;
@@ -43,7 +44,7 @@ export const SideBar = ({
             className="p-1.5 rounded-lg"
             onClick={() => setIsTabOpen(false)}
           >
-            <GiHamburgerMenu className="text-3xl" />
+            <IoClose className="text-4xl pr-2" />
           </button>
         </div>
 

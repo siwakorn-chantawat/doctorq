@@ -11,27 +11,27 @@ import { BsBookFill } from "react-icons/bs";
 
 export const links = [
     {
-        name: "Home",
+        name: "หน้าหลัก",
         path: "/",
         icon: React.createElement(MdHome)
     },
     {
-        name: "Blogs",
+        name: "ข้อมูลสุขภาพ",
         path: "/blogs",
         icon: React.createElement(BsBookFill)
     },
     {
-        name: "Program",
+        name: "โปรแกรม",
         path: "/program",
         icon: React.createElement(AiTwotoneFund)
     },
     {
-        name: "Promotion",
+        name: "โปรโมชั่น",
         path: "/promotion",
         icon: React.createElement(IoIosPricetag)
     },
     {
-        name: "Contact",
+        name: "ติดต่อเรา",
         path: "/contact",
         icon: React.createElement(FaPhone)
     }
