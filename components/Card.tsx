@@ -12,14 +12,14 @@ type CardProps = {
 export const Card = ({ ...card }: CardProps) => {
   return (
     <div
-      className="bg-primary flex flex-col gap-4 w-full rounded-2xl shadow-sm
+      className="bg-primary flex flex-col gap-4 w-full shadow-sm
     "
     >
       <Image
         loading="lazy"
         src={card.imageURL}
         alt="image"
-        className="w-full max-h-[500px] object-cover rounded-t-2xl"
+        className="w-full max-h-[500px] object-cover"
       />
 
       <div className="mt-4 flex flex-col gap-2 text-white mx-4 my-2">
