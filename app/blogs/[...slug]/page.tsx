@@ -1,4 +1,4 @@
-import { BlogContainer } from "@/components/BlogContainer";
+import { BlogContainer } from "@/components/WhiteContainer";
 import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { hilightCardsData } from "@/lib/data";

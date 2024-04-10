@@ -5,7 +5,7 @@ import { FaPhone, FaSquareFacebook, FaTiktok } from "react-icons/fa6";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col items-center gap-4 bottom-0 mt-20 bg-primary w-full h-50 px-4 pt-8 pb-4 text-white">
+    <footer className="flex flex-col items-center gap-4 bottom-0 mt-20 bg-primary w-full h-50 px-4 pb-4 text-white">
       <div className="flex flex-col gap-2 text-md md:gap-6 ">
         <Link
           href="https://www.facebook.com/doctorqTRT"

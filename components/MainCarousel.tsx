@@ -17,7 +17,7 @@ import Link from "next/link";
 
 export default function MainCarousel() {
   return (
-    <Carousel opts={{ align: "end" }} className="w-full">
+    <Carousel opts={{ align: "start" }} className="w-full">
       <CarouselContent>
         {hilightCardsData.map((card) => (
           <CarouselItem key={card.id} className="md:basis-1/2 lg:basis-1/4">

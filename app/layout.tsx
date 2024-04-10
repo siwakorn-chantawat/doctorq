@@ -27,7 +27,7 @@ export default function RootLayout({
       </Head>
       <body
         className={cn(
-          "min-h-screen bg-primary/10 font-sans antialiased",
+          "min-h-screen bg-primary font-sans antialiased",
           anuphan.className
         )}
       >

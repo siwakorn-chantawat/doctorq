@@ -1,6 +1,5 @@
+import { BlogSection } from "@/components/BlogSection";
 import Hero from "@/components/Hero";
-import { HighlightSection } from "@/components/HighlightSection";
-import LineButtonComponent from "@/components/LineAddFriend";
 import ProfileSection from "@/components/ProfileSection";
 
 import PromotionSection from "@/components/PromotionSection";
@@ -11,7 +10,7 @@ export default function Home() {
       <Hero />
       <ProfileSection />
       <PromotionSection />
-      <HighlightSection />
+      <BlogSection />
     </>
   );
 }
