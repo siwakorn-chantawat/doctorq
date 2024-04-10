@@ -7,8 +7,11 @@ type SectionHeadingProps = {
 };
 export const SectionHeading = ({ children }: SectionHeadingProps) => {
   return (
-    <h2 className="flex gap-8 items-center justify-center mt-10 mb-10  text-white text-3xl bg-primary shadow-xl px-2 py-1 rounded-2xl">
-      <BsDashLg /> {children} <BsDashLg />
+    <h2
+      className="flex flex-col underline underline-offset-[12px] decoration-[6px] decoration-secondary items-center justify-center 
+    mt-10 mb-10 text-primary font-extrabold text-3xl "
+    >
+      {children}
     </h2>
   );
 };
