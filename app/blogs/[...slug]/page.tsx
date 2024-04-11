@@ -1,6 +1,6 @@
-import { BlogContainer } from "@/components/WhiteContainer";
+import { Container } from "@/components/Container";
 import { SectionDivider } from "@/components/SectionDivider";
-import { SectionHeading } from "@/components/SectionHeading";
+
 import { hilightCardsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +24,7 @@ const getBlog = (slug: number) => {
 export default async function Blog({ params }: paramsProps) {
   const blog = await getBlog(params.slug);
   return (
-    <>
+    <Container>
       <p className="text-primary text-xl">
         <Link href={"/"}>Home</Link>
         <span>&gt; </span>
@@ -32,14 +32,10 @@ export default async function Blog({ params }: paramsProps) {
         <span>&gt; </span>
         {params.slug}
       </p>
-      <BlogContainer>
-        <h5 className="bg-primary text-secondary px-4 py-2 mb-4">
-          {blog.title}
-        </h5>
-        <div className="flex flex-col bg-primary/5 px-4">
-          <p>{blog.description}</p>
-        </div>
-      </BlogContainer>
-    </>
+      <h5 className="bg-primary text-secondary px-4 py-2 mb-4">{blog.title}</h5>
+      <div className="flex flex-col bg-primary/5 px-4">
+        <p>{blog.description}</p>
+      </div>
+    </Container>
   );
 }

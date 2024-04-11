@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="sticky top-0 z-10 w-full bg-primary">
-        <div className="md:mx-16 flex text-white items-center justify-between p-6">
+        <div className="md:mx-4 flex text-white items-center justify-between p-6">
           <a href="/">
             <Image
               src={logo}
