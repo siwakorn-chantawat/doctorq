@@ -1,5 +1,8 @@
 import { Container } from "@/components/Container";
+import Direction from "@/components/Direction";
+import GoldLine from "@/components/GoldLine";
 import { SectionDivider } from "@/components/SectionDivider";
+import { SectionHeading } from "@/components/SectionHeading";
 
 import { hilightCardsData } from "@/lib/data";
 import Image from "next/image";
@@ -25,16 +28,18 @@ export default async function Blog({ params }: paramsProps) {
   const blog = await getBlog(params.slug);
   return (
     <Container>
-      <p className="text-primary text-xl">
-        <Link href={"/"}>Home</Link>
-        <span>&gt; </span>
-        <Link href={"/blogs"}>Blogs</Link>
-        <span>&gt; </span>
-        {params.slug}
-      </p>
-      <h5 className="bg-primary text-secondary px-4 py-2 mb-4">{blog.title}</h5>
-      <div className="flex flex-col bg-primary/5 px-4">
-        <p>{blog.description}</p>
+      <Direction params={params} />
+      <div className="flex flex-col">
+        <div className="mt-4 mb-8 mx-2">
+          <h2 className={`font-extrabold text-3xl md:text-5xl`}>
+            {blog.title}
+            <GoldLine className="w-full" />
+          </h2>
+        </div>
+
+        <div className="flex flex-col px-4">
+          <p>{blog.description}</p>
+        </div>
       </div>
     </Container>
   );

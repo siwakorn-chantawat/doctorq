@@ -25,11 +25,11 @@ export const links = [
         path: "/program",
         icon: React.createElement(AiTwotoneFund)
     },
-    {
-        name: "โปรโมชั่น",
-        path: "/promotion",
-        icon: React.createElement(IoIosPricetag)
-    },
+    // {
+    //     name: "โปรโมชั่น",
+    //     path: "/promotion",
+    //     icon: React.createElement(IoIosPricetag)
+    // },
     {
         name: "ติดต่อเรา",
         path: "/contact",
