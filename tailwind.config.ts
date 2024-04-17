@@ -36,7 +36,7 @@ const config = {
           300: "#E1E1E1",
           100: "#F5F5F5",
           50: "#FAFAFA",
-          DEFAULT: "#212121",
+          DEFAULT: "#222222",
         },
         secondary: {
           600: "#A8782B",

@@ -1,12 +1,9 @@
-import { Container } from "@/components/Container";
 import Direction from "@/components/Direction";
 import GoldLine from "@/components/GoldLine";
-import { SectionDivider } from "@/components/SectionDivider";
-import { SectionHeading } from "@/components/SectionHeading";
 
 import { hilightCardsData } from "@/lib/data";
 import Image from "next/image";
-import Link from "next/link";
+import blogimage from "@/public/oldman1.jpg";
 import React from "react";
 
 type paramsProps = {
@@ -27,20 +24,28 @@ const getBlog = (slug: number) => {
 export default async function Blog({ params }: paramsProps) {
   const blog = await getBlog(params.slug);
   return (
-    <Container>
+    <>
       <Direction params={params} />
-      <div className="flex flex-col">
-        <div className="mt-4 mb-8 mx-2">
-          <h2 className={`font-extrabold text-3xl md:text-5xl`}>
+      <div className="flex flex-col sm:mx-4 md:mx-8 lg:mx-40 xl:mx-96">
+        <div className="mt-4 mb-4">
+          <h2
+            className={`text-secondary-600 text-center font-extrabold text-3xl md:text-5xl`}
+          >
             {blog.title}
             <GoldLine className="w-full" />
           </h2>
         </div>
 
-        <div className="flex flex-col px-4">
+        <Image
+          src={blogimage}
+          alt="blogimage"
+          className="w-full h-auto xl:h-96 object-contain"
+        />
+
+        <div className="flex flex-col gap-4 mt-4">
           <p>{blog.description}</p>
         </div>
       </div>
-    </Container>
+    </>
   );
 }

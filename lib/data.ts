@@ -3,9 +3,12 @@ import React from "react"
 import image1 from "@/public/hero.png"
 import highlight1 from "@/public/oldman1.jpg";
 
+import first from "@/public/doctor q fb post-3.png";
+import second from "@/public/doctor q fb post-1_new.jpg";
+import third from "@/public/doctor q fb post-2_new.jpg";
+
 import { MdHome } from "react-icons/md"
 import { AiTwotoneFund } from "react-icons/ai"
-import { IoIosPricetag } from "react-icons/io"
 import { FaPhone } from "react-icons/fa6"
 import { BsBookFill } from "react-icons/bs";
 
@@ -37,27 +40,19 @@ export const links = [
     }
 ] as const
 
-export const carouselImagesData = [
+export const PromotionImagesData = [
     {
-        imageURL: image1 ,
+        imageURL: first ,
         alt: "carousel image1"
     },
     {
-        imageURL: image1 ,
+        imageURL: second ,
         alt: "carousel image2"
     },
     {
-        imageURL: image1 ,
+        imageURL: third ,
         alt: "carousel image3"
     },
-    {
-        imageURL: image1 ,
-        alt: "carousel image4"
-    },
-    {
-        imageURL: image1 ,
-        alt: "carousel image5"
-    }
 
 ] as const
 

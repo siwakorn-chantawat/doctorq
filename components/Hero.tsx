@@ -14,7 +14,7 @@ function Hero() {
       />
 
       <div
-        className="flex flex-col mx-4 mt-4 mb-8 bg-white/90 shadow-md h-full
+        className="flex flex-col mx-4 mt-4 mb-8 lg:mx-16 lg:mt-16 bg-white/85 shadow-md h-full
       md:flex md:flex-row-reverse"
       >
         <Image

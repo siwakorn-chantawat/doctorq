@@ -13,12 +13,18 @@ export const Footer = () => {
         >
           <FaSquareFacebook /> Doctor Q Clinic
         </Link>
-        <Link href="/" className="flex items-center justify-evenly">
+        <Link
+          href="https://www.tiktok.com/@doctor.q.clinic"
+          className="flex items-center justify-evenly"
+        >
           <FaTiktok /> @doctorqclinic
         </Link>
-        <Link href="/" className="flex items-center justify-evenly">
+        <Link
+          href={"tel:0639031416"}
+          className="flex items-center justify-evenly"
+        >
           <FaPhone />
-          <span>08-1234-5678</span>
+          <span>06-3903-1416</span>
         </Link>
         <Link href="/" className="flex items-center justify-evenly">
           LINE OA: @doctorqclinic
