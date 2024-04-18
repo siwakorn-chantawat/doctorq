@@ -14,7 +14,8 @@ export default function Contact() {
       <div className="flex flex-col md:flex-row  justify-center mx-2 md:mx-4 xl:mx-40">
         <div className="flex flex-col divide-y-2 divide-solid divide-primary-300 gap-4 py-6 px-4 border-2 border-primary-300/95">
           <h4 className="text-xl pb-4">แผนที่และที่อยู่</h4>
-          <GoogleMap />
+          {/* <GoogleMap /> */}
+
           <Image
             src={map}
             alt="doctorq map"
